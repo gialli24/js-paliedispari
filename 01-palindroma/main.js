@@ -4,9 +4,6 @@ Palindromo: può essere letta in entrambi i versi ( otto )
 */
 
 function checkPalindrome(word) {
-    // Bool variable
-    let isPalindrome = true;
-
     // Loop chars avoiding ripetitions (length/2)
     for (let i = 0; i < word.length / 2; i++) {
         //Get chars to check
@@ -15,18 +12,21 @@ function checkPalindrome(word) {
 
         //If different not palindrome
         if (leftLetter !== rightLetter) {
-            isPalindrome = false;
+            return false;
             break;
         }
     }
 
-    return isPalindrome;
+    return true;
 }
 
+//Get word from user
 const word = prompt("Inserisci una parola");
 
+//Call function
 const isPalindrome = checkPalindrome(word);
 
+//Log output
 if (isPalindrome) {
     console.log("E' palindroma")
 } else {
